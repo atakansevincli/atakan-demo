@@ -5,7 +5,7 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   const queryObject = url.parse(req.url, true).query;
-  const message = queryObject.message || "FEATURE-2";
+  const message = queryObject.message || "MASTER";
 
   res.writeHead(200, { "Content-Type": "application/json" });
   res.end(JSON.stringify({ message }));
