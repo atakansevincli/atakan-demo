@@ -1,20 +1,18 @@
-# Temel imaj olarak Node.js kullan
+# Base image
 FROM node:14
 
-# Uygulama dizinini oluştur
+# Create app directory
 WORKDIR /usr/src/app
 
-# package.json ve package-lock.json dosyalarını kopyala
+# Install app dependencies
 COPY package*.json ./
-
-# Bağımlılıkları yükle
 RUN npm install
 
-# Uygulama kodunu kopyala
+# Bundle app source
 COPY . .
 
-# Uygulamanın dışarıya açacağı port
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Uygulamayı başlat
-CMD ["node", "src/app.js"]
+# Command to run the app
+CMD ["npm", "start"]
