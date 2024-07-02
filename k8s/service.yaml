@@ -7,7 +7,9 @@ spec:
   selector:
     app: json-api-demo
   ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000 # Burayı 3000 olarak değiştirin
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30036
   type: NodePort
