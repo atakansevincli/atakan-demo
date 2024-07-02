@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: json-api-demo
+  labels:
+    app: json-api-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: json-api-demo
+  template:
+    metadata:
+      labels:
+        app: json-api-demo
+    spec:
+      containers:
+        - name: json-api-demo
+          image: docker-registry-service.default.svc.cluster.local:5000/json-api-demo:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          env:
+            - name: NODE_ENV
+              value: "production"

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: json-api-demo-service
+  labels:
+    app: json-api-demo
+spec:
+  selector:
+    app: json-api-demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
