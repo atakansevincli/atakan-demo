@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  const message = req.query.message || "Hello, World!";
+  const message = req.query.message || "FEATURE-2!";
   res.json({ message });
 });
 
