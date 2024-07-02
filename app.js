@@ -1,12 +1,16 @@
-const express = require("express");
-const app = express();
+const http = require("http");
+const url = require("url");
+
 const port = 3000;
 
-app.get("/", (req, res) => {
-  const message = req.query.message || "MASTER";
-  res.json({ message });
+const server = http.createServer((req, res) => {
+  const queryObject = url.parse(req.url, true).query;
+  const message = queryObject.message || "MASTER";
+
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ message }));
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
