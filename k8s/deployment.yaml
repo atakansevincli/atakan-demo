@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: json-api-demo
-          image: 192.168.36.155:32000/atakan-test-demo:master-84
+          image: your-docker-registry.com/json-api-demo:latest
           ports:
             - containerPort: 3000 # Burayı 3000 olarak değiştirin
           resources:

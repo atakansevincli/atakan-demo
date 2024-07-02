@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: master.yourdomain.com
+    - host: your-subdomain.yourdomain.com
       http:
         paths:
           - path: /
