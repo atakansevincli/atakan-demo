@@ -2,10 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: json-api-demo-ingress
-  labels:
-    app: json-api-demo
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  namespace: default
 spec:
   rules:
     - host: your-subdomain.yourdomain.com
